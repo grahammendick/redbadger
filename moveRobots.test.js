@@ -121,3 +121,42 @@ L`;
     })
 });
 
+describe('Move Off at 2 2 N', () => {
+    it('should go to 2 2 N LOST', () => {
+        var input = `2 2
+2 2 N
+F`;
+        var output = moveRobots(input);
+        assert.equal(output, '2 2 N LOST');
+    })
+});
+
+describe('Move Off at 2 2 E', () => {
+    it('should go to 2 2 E LOST', () => {
+        var input = `2 2
+2 2 E
+F`;
+        var output = moveRobots(input);
+        assert.equal(output, '2 2 E LOST');
+    })
+});
+
+describe('Move Off at 0 0 S', () => {
+    it('should go to 0 0 S LOST', () => {
+        var input = `2 2
+0 0 S
+F`;
+        var output = moveRobots(input);
+        assert.equal(output, '0 0 S LOST');
+    })
+});
+
+describe('Move Off at 0 0 W', () => {
+    it('should go to 0 0 W LOST', () => {
+        var input = `2 2
+0 0 W
+F`;
+        var output = moveRobots(input);
+        assert.equal(output, '0 0 W LOST');
+    })
+});
