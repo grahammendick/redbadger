@@ -1,7 +1,6 @@
-var readInput = require('./io/readInput');
-var writeOutput = require('./io/writeOutput');
+var fs = require('fs');
 var moveRobots = require('./moveRobots');
 
-readInput((data) => {
-  writeOutput(moveRobots(data.grid, data.robots));
+fs.readFile('./input.txt', 'utf8', (err, data) => {
+  console.log(moveRobots(data));
 });

@@ -1,10 +1,13 @@
+var parseInput = require('./parseInput');
+var formatOutput = require('./formatOutput');
 var forward = require('./move/forward');
 var right = require('./move/right');
 var left = require('./move/left');
 
-module.exports = function(grid, robots) {
+module.exports = function(input) {
   var moves = { 'F': forward, 'R': right, 'L': left };
-  return robots
+  var data = parseInput(input);
+  var output = data.robots
     .reduce((state, robot) => {
       state.newPositions.push(
         robot.moves
@@ -19,7 +22,8 @@ module.exports = function(grid, robots) {
           }, robot)
         );
       return state;
-    }, { grid: grid, newPositions: [], lost: [] }).newPositions;
+    }, { grid: data.grid, newPositions: [], lost: [] }).newPositions;
+    return formatOutput(output);
 }
 
 function checkLost(state, prevPosition, newPosition) {
