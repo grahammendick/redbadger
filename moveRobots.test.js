@@ -41,3 +41,83 @@ F`;
     })
 });
 
+describe('Move Right at 1 1 N', () => {
+    it('should go to 1 1 E', () => {
+        var input = `2 2
+1 1 N
+R`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 E');
+    })
+});
+
+describe('Move Right at 1 1 E', () => {
+    it('should go to 1 1 S', () => {
+        var input = `2 2
+1 1 E
+R`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 S');
+    })
+});
+
+describe('Move Right at 1 1 S', () => {
+    it('should go to 1 1 W', () => {
+        var input = `2 2
+1 1 S
+R`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 W');
+    })
+});
+
+describe('Move Right at 1 1 W', () => {
+    it('should go to 1 1 N', () => {
+        var input = `2 2
+1 1 W
+R`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 N');
+    })
+});
+
+describe('Move Left at 1 1 N', () => {
+    it('should go to 1 1 W', () => {
+        var input = `2 2
+1 1 N
+L`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 W');
+    })
+});
+
+describe('Move Left at 1 1 E', () => {
+    it('should go to 1 1 N', () => {
+        var input = `2 2
+1 1 E
+L`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 N');
+    })
+});
+
+describe('Move Left at 1 1 S', () => {
+    it('should go to 1 1 E', () => {
+        var input = `2 2
+1 1 S
+L`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 E');
+    })
+});
+
+describe('Move Left at 1 1 W', () => {
+    it('should go to 1 1 S', () => {
+        var input = `2 2
+1 1 W
+L`;
+        var output = moveRobots(input);
+        assert.equal(output, '1 1 S');
+    })
+});
+
