@@ -4,6 +4,13 @@ var forward = require('./move/forward');
 var right = require('./move/right');
 var left = require('./move/left');
 
+/**
+ * Uses the Redux pattern: 'F', 'L' and 'R' are the actions,
+ * the contents of the move folder are the reducers and the
+ * position of the robot is the state.
+ * This is all inside a larger 'robots' reducer so that the
+ * 'lost' grid positions can be shared between robots. 
+ */
 module.exports = function(input) {
   var moves = { 'F': forward, 'R': right, 'L': left };
   var data = parseInput(input);
